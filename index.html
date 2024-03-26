@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+
+<head>
+
+<meta charset="utf-8">
+<title>Discount</title>
+
+
+</head>
+
+<body>
+    <form onsubmit=" return calculateDiscount()">
+        <label for="price">prezzo:</label>
+        <input type="number" name="price" id="price" placeholder="inserisci il prezzo">
+
+        <br>
+
+        <label for="discount">Sconto in percentuale:</label>
+        <input type="number" name="discount" id="discount" placeholder="inserisci lo sconto %">
+
+        <br>
+
+        <button type="submit">Calcola</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateDiscount(){
+
+            const price = document.getElementById('price').value;
+
+            const discount = document.getElementById('discount').value;
+
+            const discountedPrice = price * (1 - discount/100);
+
+            // mostra il prezzo
+
+            const resultElement = document.getElementById('result');
+
+            resultElement.innerHTML = `prezzo scontato: Euro ${discountedPrice.toFixed(2)}`;
+
+            //previene l'invio del form
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
+
+<!--       _
+       .__(.)< (MEOW)
+        \___)   
+ ~~~~~~~~~~~~~~~~~~-->
